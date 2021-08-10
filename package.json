@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TCHAKPELE/masterProject_back/issues"
   },
-  "homepage": "https://github.com/TCHAKPELE/masterProject_back#readme"
+  "homepage": "https://github.com/TCHAKPELE/masterProject_back#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
