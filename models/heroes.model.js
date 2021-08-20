@@ -1,7 +1,7 @@
 const sql = require("./db.js");
 
 // constructor
-const Heroes = function(heroes) {
+const Heroes = function (heroes) {
   this.Nom = heroes.Nom;
   this.Attaque = heroes.Attaque;
   this.Defense = heroes.Defense;
