@@ -11,12 +11,11 @@ exports.create = (req, res) => {
 
     // Create a Heroes
     const heroes = new Heroes({
-        Nom: req.body.Nom,
-        Attaque: req.body.Attaque,
-        Defense: req.body.Defense,
-        Statut: req.body.Statut,
-        Type: req.body.Type,
-        Vie: req.body.Vie
+        name: req.body.name,
+        Intelligence: req.body.Intelligence,
+        Force: req.body.Force,
+        Resistance: req.body.Resistance,
+        Role: req.body.Role
     });
 
     // Save Heroes in the database

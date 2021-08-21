@@ -2,12 +2,11 @@ const sql = require("./db.js");
 
 // constructor
 const Heroes = function (heroes) {
-  this.Nom = heroes.Nom;
-  this.Attaque = heroes.Attaque;
-  this.Defense = heroes.Defense;
-  this.Statut = heroes.Statut;
-  this.Type = heroes.Type;
-  this.Vie = heroes.Vie;
+  this.name = heroes.name;
+  this.Intelligence = heroes.Intelligence;
+  this.Force = heroes.Force;
+  this.Resistance = heroes.Resistance;
+  this.Role = heroes.Role;
 };
 
 Heroes.create = (newHeroes, result) => {
@@ -57,8 +56,8 @@ Heroes.getAll = result => {
 
 Heroes.updateById = (id, heroes, result) => {
   sql.query(
-    "UPDATE heroes SET Nom = ?, Attaque = ?, Defense = ? Statut = ? Type = ? Vie = ? WHERE id = ?",
-    [heroes.Nom, heroes.Attaque, heroes.Defense, heroes.Statut, heroes.Type, heroes.Vie, id],
+    "UPDATE heroes SET name = ?, Intelligence = ?, Force = ? Resistance = ? Role = ? WHERE id = ?",
+    [heroes.name, heroes.Intelligence, heroes.Force, heroes.Resistance, heroes.Role, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
