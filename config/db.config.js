@@ -1,6 +1,7 @@
 module.exports = {
   HOST: "localhost",
   USER: "root",
-  PASSWORD: "Pwd12345678",
+  PASSWORD: "root",
+  PORT: "3306",
   DB: "heroes_cards"
 };

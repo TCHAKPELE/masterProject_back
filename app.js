@@ -1,20 +1,31 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+var createError = require('http-errors');
+ var express = require('express');
+ var path = require('path');
+ var cors = require("cors");
+ var bodyParser = require('body-parser');
+ 
+ var corsOptions = {
+    origin: "http://localhost:3000"
+  };
+   
+  app.use(cors(corsOptions));
 
-const app = express();
-
-// parse requests of content-type: application/json
-app.use(bodyParser.json());
-
-// parse requests of content-type: application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+  const app = express();
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+    extended: false
+  }));
+  app.use(cors());
 
 // simple route
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to my back-end application." });
 });
 
-require("./routes/heroes.routes.js")(app);
+const apiroute = require("./routes/heroes.routes.js")(app);
+
+app.use('/api', apiroute);
 
 // set port, listen for requests
 app.listen(3000, () => {
