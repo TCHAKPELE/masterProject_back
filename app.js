@@ -1,6 +1,5 @@
 const express = require("express");
 var createError = require('http-errors');
-var express = require('express');
 var path = require('path');
 var cors = require("cors");
 var bodyParser = require('body-parser');
